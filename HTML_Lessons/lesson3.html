@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Lesson 3 — Semantic HTML</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="lesson-page">
+
+  <a href="../index.html" class="back-link">← Back to Course</a>
+
+  <h1>HTML Lesson 3 — Semantic HTML</h1>
+  <p class="subtitle">Using meaningful tags that describe the role of content</p>
+
+  <!-- ── Why semantic HTML ────────────────── -->
+  <h2>Why It Matters</h2>
+  <p>
+    Before HTML5, developers used <code>&lt;div&gt;</code> for everything. Semantic elements replace
+    generic <code>&lt;div&gt;</code> tags with names that describe <em>what the content is</em>, not just
+    how it looks.
+  </p>
+
+  <table>
+    <tr>
+      <th>Benefit</th>
+      <th>How semantic HTML helps</th>
+    </tr>
+    <tr>
+      <td>Accessibility</td>
+      <td>Screen readers announce the role of each region to visually impaired users</td>
+    </tr>
+    <tr>
+      <td>SEO</td>
+      <td>Search engines understand which content is navigation, articles, or footers</td>
+    </tr>
+    <tr>
+      <td>Maintainability</td>
+      <td>Code is easier to read — <code>&lt;nav&gt;</code> is clearer than <code>&lt;div class="nav"&gt;</code></td>
+    </tr>
+  </table>
+
+  <!-- ── Page-level elements ──────────────── -->
+  <h2>Page-Level Semantic Elements</h2>
+
+  <table>
+    <tr>
+      <th>Element</th>
+      <th>Purpose</th>
+    </tr>
+    <tr>
+      <td><code>&lt;header&gt;</code></td>
+      <td>Site or section header — logo, site title, top navigation</td>
+    </tr>
+    <tr>
+      <td><code>&lt;nav&gt;</code></td>
+      <td>Primary navigation links</td>
+    </tr>
+    <tr>
+      <td><code>&lt;main&gt;</code></td>
+      <td>The main content of the page — unique to this page, use once</td>
+    </tr>
+    <tr>
+      <td><code>&lt;aside&gt;</code></td>
+      <td>Supplementary content — sidebar, related links, pull quotes</td>
+    </tr>
+    <tr>
+      <td><code>&lt;footer&gt;</code></td>
+      <td>Bottom of the page or section — copyright, contact, links</td>
+    </tr>
+  </table>
+
+  <!-- ── Content elements ─────────────────── -->
+  <h2>Content Semantic Elements</h2>
+
+  <table>
+    <tr>
+      <th>Element</th>
+      <th>Purpose</th>
+    </tr>
+    <tr>
+      <td><code>&lt;article&gt;</code></td>
+      <td>Self-contained piece of content that makes sense on its own (blog post, news story, comment)</td>
+    </tr>
+    <tr>
+      <td><code>&lt;section&gt;</code></td>
+      <td>Thematic grouping of content, usually with a heading</td>
+    </tr>
+    <tr>
+      <td><code>&lt;figure&gt;</code></td>
+      <td>Self-contained media (image, chart, code) with an optional caption</td>
+    </tr>
+    <tr>
+      <td><code>&lt;figcaption&gt;</code></td>
+      <td>Caption for the <code>&lt;figure&gt;</code> element</td>
+    </tr>
+    <tr>
+      <td><code>&lt;time&gt;</code></td>
+      <td>A date/time value; <code>datetime</code> attribute provides machine-readable format</td>
+    </tr>
+    <tr>
+      <td><code>&lt;address&gt;</code></td>
+      <td>Contact information for the nearest <code>&lt;article&gt;</code> or the whole document</td>
+    </tr>
+  </table>
+
+  <!-- ── Visual demo ──────────────────────── -->
+  <h2>Visual Page Layout Demo</h2>
+  <p>The color-coded blocks below show how semantic elements map to a typical page layout:</p>
+
+  <div class="semantic-demo">
+
+    <!-- header: site branding and top-level nav -->
+    <header>
+      <span class="elem-label">&lt;header&gt;</span>
+      Site Logo &amp; Title
+    </header>
+
+    <!-- nav: primary navigation -->
+    <nav>
+      <span class="elem-label">&lt;nav&gt;</span>
+      Home &nbsp;|&nbsp; About &nbsp;|&nbsp; Blog &nbsp;|&nbsp; Contact
+    </nav>
+
+    <!-- main: the unique content of this page -->
+    <main>
+      <span class="elem-label">&lt;main&gt;</span>
+
+      <!-- section groups related content with a heading -->
+      <section>
+        <span class="elem-label">&lt;section&gt; — Featured Posts</span>
+
+        <!-- article: a self-contained piece of content -->
+        <article>
+          <span class="elem-label">&lt;article&gt;</span>
+          <strong>Post Title</strong><br>
+          Published <time datetime="2025-03-01">March 1, 2025</time>
+          <p style="margin:0.3rem 0 0;">Article excerpt goes here…</p>
+        </article>
+
+        <article>
+          <span class="elem-label">&lt;article&gt;</span>
+          <strong>Another Post</strong><br>
+          Published <time datetime="2025-02-14">February 14, 2025</time>
+          <p style="margin:0.3rem 0 0;">Another excerpt…</p>
+        </article>
+      </section>
+
+      <!-- figure with a caption -->
+      <figure style="margin:0.5rem 0;">
+        <span class="elem-label">&lt;figure&gt;</span>
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='80'%3E%3Crect width='120' height='80' fill='%23e2e8f0'/%3E%3Ctext x='60' y='46' font-family='sans-serif' font-size='11' fill='%23718096' text-anchor='middle'%3EImage%3C/text%3E%3C/svg%3E"
+          alt="Example image — 120×80 px"
+          style="display:block; margin-bottom:0.3rem;">
+        <figcaption><span class="elem-label">&lt;figcaption&gt;</span> Caption describing the image above</figcaption>
+      </figure>
+    </main>
+
+    <!-- aside: sidebar / supplementary content -->
+    <aside>
+      <span class="elem-label">&lt;aside&gt;</span>
+      Related links, ads, or extra info
+    </aside>
+
+    <!-- footer: copyright, contact, secondary links -->
+    <footer>
+      <span class="elem-label">&lt;footer&gt;</span>
+      &copy; 2025 My Site &nbsp;|&nbsp;
+      <address style="display:inline;">
+        <a href="mailto:hello@example.com">hello@example.com</a>
+      </address>
+    </footer>
+
+  </div>
+
+  <!-- ── Code example ──────────────────────── -->
+  <h2>Code Structure</h2>
+  <pre><code>&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;My Blog&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="/"&gt;Home&lt;/a&gt;
+      &lt;a href="/about"&gt;About&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Latest Posts&lt;/h2&gt;
+
+      &lt;article&gt;
+        &lt;h3&gt;Post Title&lt;/h3&gt;
+        &lt;time datetime="2025-03-01"&gt;March 1, 2025&lt;/time&gt;
+        &lt;p&gt;Post content…&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;aside&gt;
+    &lt;h2&gt;Related Links&lt;/h2&gt;
+  &lt;/aside&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2025 My Blog&lt;/p&gt;
+    &lt;address&gt;Contact: &lt;a href="mailto:hi@example.com"&gt;hi@example.com&lt;/a&gt;&lt;/address&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+
+  <p class="note">
+    Use <code>&lt;div&gt;</code> when no semantic element fits — for layout containers
+    that have no inherent meaning. Use semantic elements whenever the role of the content is clear.
+  </p>
+
+</body>
+</html>

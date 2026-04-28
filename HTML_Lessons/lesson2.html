@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Lesson 2 — Forms</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="lesson-page">
+
+  <a href="../index.html" class="back-link">← Back to Course</a>
+
+  <h1>HTML Lesson 2 — Forms</h1>
+  <p class="subtitle">Collecting user input with forms and input elements</p>
+
+  <!-- ── The form element ─────────────────── -->
+  <h2>The &lt;form&gt; Element</h2>
+  <p>
+    A <code>&lt;form&gt;</code> is a container for interactive controls. When submitted, it sends the
+    collected data to a server (or handles it with JavaScript).
+  </p>
+
+  <pre><code>&lt;form action="/submit" method="post"&gt;
+  &lt;!-- input elements go here --&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+  <table>
+    <tr>
+      <th>Attribute</th>
+      <th>Purpose</th>
+    </tr>
+    <tr>
+      <td><code>action</code></td>
+      <td>URL that receives the form data when submitted</td>
+    </tr>
+    <tr>
+      <td><code>method</code></td>
+      <td><code>get</code> (data in URL) or <code>post</code> (data in request body)</td>
+    </tr>
+  </table>
+
+  <!-- ── label ────────────────────────────── -->
+  <h2>&lt;label&gt;</h2>
+  <p>
+    Always pair inputs with a <code>&lt;label&gt;</code>. When a user clicks the label, focus moves to the input.
+    Link them with matching <code>for</code> and <code>id</code> values.
+  </p>
+
+  <pre><code>&lt;label for="username"&gt;Username&lt;/label&gt;
+&lt;input type="text" id="username" name="username"&gt;</code></pre>
+
+  <!-- ── Text inputs ───────────────────────── -->
+  <h2>Text Inputs</h2>
+  <p>The <code>&lt;input&gt;</code> tag is self-closing and changes behavior based on its <code>type</code> attribute.</p>
+
+  <div class="demo-area demo-form">
+    <form action="#" onsubmit="return false;">
+
+      <!-- type="text" — general single-line text -->
+      <div class="form-group">
+        <label for="name">Name <code>type="text"</code></label>
+        <input type="text" id="name" name="name" placeholder="e.g. Alice">
+      </div>
+
+      <!-- type="email" — validates email format -->
+      <div class="form-group">
+        <label for="email">Email <code>type="email"</code></label>
+        <input type="email" id="email" name="email" placeholder="e.g. alice@example.com">
+      </div>
+
+      <!-- type="password" — hides the typed characters -->
+      <div class="form-group">
+        <label for="password">Password <code>type="password"</code></label>
+        <input type="password" id="password" name="password" placeholder="Enter password">
+      </div>
+
+      <!-- type="number" — numeric input with optional min/max -->
+      <div class="form-group">
+        <label for="age">Age <code>type="number"</code> (min 1, max 120)</label>
+        <input type="number" id="age" name="age" min="1" max="120" placeholder="e.g. 25">
+      </div>
+
+      <!-- type="date" — browser date picker -->
+      <div class="form-group">
+        <label for="birthdate">Birth Date <code>type="date"</code></label>
+        <input type="date" id="birthdate" name="birthdate">
+      </div>
+
+    </form>
+  </div>
+
+  <!-- ── Checkbox and Radio ───────────────── -->
+  <h2>Checkbox and Radio</h2>
+
+  <pre><code>&lt;!-- Checkbox: multiple selections allowed --&gt;
+&lt;input type="checkbox" id="agree" name="agree"&gt;
+&lt;label for="agree"&gt;I agree to the terms&lt;/label&gt;
+
+&lt;!-- Radio: only one selection per group (same name) --&gt;
+&lt;input type="radio" id="js" name="language" value="js"&gt;
+&lt;label for="js"&gt;JavaScript&lt;/label&gt;
+
+&lt;input type="radio" id="py" name="language" value="py"&gt;
+&lt;label for="py"&gt;Python&lt;/label&gt;</code></pre>
+
+  <div class="demo-area demo-form">
+    <form action="#" onsubmit="return false;">
+      <div class="form-group">
+        <input type="checkbox" id="agree" name="agree">
+        <label for="agree" style="display:inline; font-weight:normal;">I agree to the terms</label>
+      </div>
+
+      <p style="margin-top:0.75rem; font-weight:500; font-size:0.9rem;">Favourite language:</p>
+      <div class="form-group">
+        <input type="radio" id="lang-js" name="language" value="js">
+        <label for="lang-js" style="display:inline; font-weight:normal;">JavaScript</label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="lang-py" name="language" value="py">
+        <label for="lang-py" style="display:inline; font-weight:normal;">Python</label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="lang-html" name="language" value="html">
+        <label for="lang-html" style="display:inline; font-weight:normal;">HTML</label>
+      </div>
+    </form>
+  </div>
+
+  <!-- ── Select ───────────────────────────── -->
+  <h2>&lt;select&gt; and &lt;option&gt;</h2>
+  <p>A dropdown list lets users pick one (or more) options from a list.</p>
+
+  <pre><code>&lt;label for="country"&gt;Country&lt;/label&gt;
+&lt;select id="country" name="country"&gt;
+  &lt;option value=""&gt;-- Choose --&lt;/option&gt;
+  &lt;option value="us"&gt;United States&lt;/option&gt;
+  &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+  &lt;option value="de"&gt;Germany&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+
+  <div class="demo-area demo-form">
+    <form action="#" onsubmit="return false;">
+      <div class="form-group">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="">-- Choose --</option>
+          <option value="us">United States</option>
+          <option value="uk">United Kingdom</option>
+          <option value="de">Germany</option>
+          <option value="fr">France</option>
+        </select>
+      </div>
+    </form>
+  </div>
+
+  <!-- ── Textarea ─────────────────────────── -->
+  <h2>&lt;textarea&gt;</h2>
+  <p>For multi-line text input. Use <code>rows</code> and <code>cols</code> to set its default size.</p>
+
+  <pre><code>&lt;label for="message"&gt;Message&lt;/label&gt;
+&lt;textarea id="message" name="message" rows="4" placeholder="Type here..."&gt;&lt;/textarea&gt;</code></pre>
+
+  <div class="demo-area demo-form">
+    <form action="#" onsubmit="return false;">
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Type your message here..."></textarea>
+      </div>
+    </form>
+  </div>
+
+  <!-- ── Validation attributes ─────────────── -->
+  <h2>Built-in Validation</h2>
+  <p>HTML provides attributes that enforce rules before the form can be submitted — no JavaScript needed.</p>
+
+  <table>
+    <tr>
+      <th>Attribute</th>
+      <th>Effect</th>
+    </tr>
+    <tr>
+      <td><code>required</code></td>
+      <td>Field must be filled in before submission</td>
+    </tr>
+    <tr>
+      <td><code>minlength</code> / <code>maxlength</code></td>
+      <td>Minimum / maximum number of characters</td>
+    </tr>
+    <tr>
+      <td><code>min</code> / <code>max</code></td>
+      <td>Minimum / maximum value for number or date inputs</td>
+    </tr>
+    <tr>
+      <td><code>pattern</code></td>
+      <td>Regular expression the value must match</td>
+    </tr>
+    <tr>
+      <td><code>placeholder</code></td>
+      <td>Hint text shown when the field is empty</td>
+    </tr>
+  </table>
+
+  <div class="demo-area demo-form">
+    <form action="#" onsubmit="alert('Form submitted!'); return false;">
+      <div class="form-group">
+        <label for="val-email">Email (required)</label>
+        <input type="email" id="val-email" name="val-email" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label for="val-username">Username (3–12 characters, required)</label>
+        <input type="text" id="val-username" name="val-username" required minlength="3" maxlength="12" placeholder="e.g. alice123">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <p class="note">Try submitting the form above with an empty field or an invalid email to see browser validation in action.</p>
+
+</body>
+</html>

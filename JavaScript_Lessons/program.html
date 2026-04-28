@@ -1,2 +1,68 @@
-<html><body><pre><script src="program.js">
-</script></pre></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Intro — Hello World</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="lesson-page">
+
+  <a href="../index.html" class="back-link">← Back to Course</a>
+
+  <h1>JavaScript Intro — Hello World</h1>
+  <p class="subtitle">How to run JavaScript and display output</p>
+
+  <h2>Where Does JavaScript Run?</h2>
+  <p>JavaScript runs in the browser. You can include it in an HTML page using the <code>&lt;script&gt;</code> tag.</p>
+
+  <pre><code>&lt;!-- At the end of &lt;body&gt; — script loads after the HTML --&gt;
+&lt;body&gt;
+  &lt;p&gt;Hello!&lt;/p&gt;
+  &lt;script src="program.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;!-- Or inline --&gt;
+&lt;script&gt;
+  console.log('Hello from an inline script!');
+&lt;/script&gt;</code></pre>
+
+  <h2>console.log()</h2>
+  <p>
+    The most common way to output data while writing JavaScript is <code>console.log()</code>.
+    Output appears in the browser's <strong>Developer Tools</strong> console.
+  </p>
+
+  <pre><code>console.log('Hello, World!');   // string output
+console.log(42);                // number output
+console.log(true);              // boolean output
+console.log([1, 2, 3]);        // array output</code></pre>
+
+  <div class="note">
+    Open Developer Tools with <strong>F12</strong> (Windows/Linux) or <strong>Cmd+Option+I</strong> (Mac),
+    then click the <strong>Console</strong> tab to see <code>console.log</code> output.
+    This page logs a message — open the console to see it!
+  </div>
+
+  <h2>document.write()</h2>
+  <p>
+    <code>document.write()</code> inserts text directly into the HTML page.
+    It is rarely used in modern development but useful for understanding how JavaScript interacts with the DOM.
+  </p>
+
+  <pre><code>document.write('&lt;p&gt;Hello from JavaScript!&lt;/p&gt;');</code></pre>
+
+  <h2>Live Demo</h2>
+  <p>The text below is written by JavaScript using <code>document.write()</code>:</p>
+
+  <div class="demo-area">
+    <script>
+      document.write('<p style="color:#2563eb; font-weight:500; margin:0;">Hello, World! — written by document.write()</p>');
+    </script>
+  </div>
+
+  <!-- Loads program.js which logs to the console -->
+  <script src="program.js"></script>
+
+</body>
+</html>

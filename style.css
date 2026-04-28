@@ -1,0 +1,337 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+  background: #f0f4f8;
+  color: #1a202c;
+  line-height: 1.7;
+}
+
+/* ── Index page ────────────────────────────── */
+
+.site-header {
+  background: #1a202c;
+  color: #fff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.site-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.site-header p {
+  color: #a0aec0;
+  font-size: 1.1rem;
+}
+
+.modules {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+}
+
+.module {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.module h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.module ul {
+  list-style: none;
+}
+
+.module li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #f7fafc;
+}
+
+.module a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.module a:hover {
+  text-decoration: underline;
+}
+
+.lesson-label {
+  display: block;
+  font-size: 0.78rem;
+  color: #718096;
+  margin-top: 0.1rem;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  color: #a0aec0;
+  font-size: 0.875rem;
+}
+
+/* ── Lesson pages ──────────────────────────── */
+
+.lesson-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  background: #f0f4f8;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.lesson-page h1 {
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+  color: #1a202c;
+}
+
+.lesson-page .subtitle {
+  color: #718096;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.lesson-page h2 {
+  font-size: 1.3rem;
+  margin: 2rem 0 0.75rem;
+  color: #2d3748;
+}
+
+.lesson-page h3 {
+  font-size: 1.05rem;
+  margin: 1.25rem 0 0.5rem;
+  color: #4a5568;
+}
+
+.lesson-page p {
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+.lesson-page ul,
+.lesson-page ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.lesson-page li {
+  margin-bottom: 0.35rem;
+}
+
+code {
+  background: #edf2f7;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Cascadia Code', Consolas, monospace;
+  font-size: 0.88em;
+  color: #c53030;
+}
+
+pre {
+  background: #1a202c;
+  color: #e2e8f0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0.5rem 0 1.5rem;
+  font-family: 'Fira Code', 'Cascadia Code', Consolas, monospace;
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+.note {
+  background: #ebf8ff;
+  border-left: 4px solid #3182ce;
+  padding: 0.75rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.95rem;
+  color: #2c5282;
+}
+
+.warning {
+  background: #fffaf0;
+  border-left: 4px solid #ed8936;
+  padding: 0.75rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.95rem;
+  color: #744210;
+}
+
+.demo-area {
+  border: 2px dashed #cbd5e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 0.5rem 0 1.5rem;
+  background: #fff;
+}
+
+.demo-area p {
+  margin-bottom: 0.5rem;
+}
+
+/* ── Tables ────────────────────────────────── */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+th {
+  background: #edf2f7;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+td {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:nth-child(even) td {
+  background: #f7fafc;
+}
+
+/* ── Forms demo ────────────────────────────── */
+
+.demo-form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #2d3748;
+}
+
+.demo-form input[type="text"],
+.demo-form input[type="email"],
+.demo-form input[type="password"],
+.demo-form input[type="number"],
+.demo-form input[type="date"],
+.demo-form select,
+.demo-form textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fff;
+  color: #1a202c;
+}
+
+.demo-form input[type="text"]:focus,
+.demo-form input[type="email"]:focus,
+.demo-form select:focus,
+.demo-form textarea:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+}
+
+.demo-form .form-group {
+  margin-bottom: 0.5rem;
+}
+
+.demo-form button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.25rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.demo-form button:hover {
+  background: #1d4ed8;
+}
+
+/* ── Semantic HTML demo ────────────────────── */
+
+.semantic-demo {
+  border: 2px dashed #cbd5e0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0.5rem 0 1.5rem;
+  font-size: 0.9rem;
+}
+
+.semantic-demo header,
+.semantic-demo nav,
+.semantic-demo main,
+.semantic-demo aside,
+.semantic-demo footer,
+.semantic-demo article,
+.semantic-demo section {
+  padding: 0.6rem 1rem;
+  position: relative;
+}
+
+.semantic-demo header { background: #bee3f8; border-bottom: 1px solid #90cdf4; }
+.semantic-demo nav    { background: #c6f6d5; border-bottom: 1px solid #9ae6b4; }
+.semantic-demo main   { background: #fefcbf; }
+.semantic-demo aside  { background: #fed7e2; border-top: 1px solid #fbb6ce; }
+.semantic-demo footer { background: #e2e8f0; border-top: 1px solid #cbd5e0; }
+.semantic-demo article { background: #fffaf0; border: 1px solid #fbd38d; border-radius: 4px; margin: 0.5rem 0; }
+.semantic-demo section { background: #f0fff4; border: 1px dashed #9ae6b4; border-radius: 4px; margin: 0.5rem 0; }
+
+.elem-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.2rem;
+}

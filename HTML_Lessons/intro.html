@@ -1,42 +1,117 @@
-<!DOCTYPE html> <!-- Defines the type of document and the version of HTML (HTML5 in this case) -->
-<html> <!-- Start of the HTML document -->
-
-<head> <!-- Contains meta-information about the document, such as the title and links to styles -->
-	<title>First HTML page!</title> <!-- The title of the page, displayed on the browser tab -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Intro — Document Structure</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
+<body class="lesson-page">
 
-<body> <!-- Body part - main -->
-	<h1>Hello, I'm Heading Level 1!</h1>
-	<h2>Hello, I'm Heading Level 2!</h2>
-	<h3>Hello, I'm Heading Level 3!</h3>
-	<h4>Hello, I'm Heading Level 4!</h4>
-	<h5>Hello, I'm Heading Level 5!</h5>
-	<h6>Hello, I'm Heading Level 6!</h6>
+  <a href="../index.html" class="back-link">← Back to Course</a>
 
-	<p>"I’m a moomintroll," answered Moomintroll, who had got his courage back.</p>
-	<p>
-		It must have been late in the afternoon one day at the end of August when Moomintroll and his mother arrived at
-		the deepest part of the great forest. It was completely quiet, and so dim between the trees that it was as
-		though twilight had already fallen. Here and there giant flowers grew, glowing with a peculiar light like
-		flickering lamps, and furthest in among the shadows small, cold green points moved.
-	</p>
-	<p> "Why is that?" asked Moominmamma.
+  <!-- h1 marks the main heading of the page — use only one per page -->
+  <h1>HTML Intro — Document Structure</h1>
+  <p class="subtitle">How every HTML page is built and the most common elements</p>
 
-		"Oh, because that’s where the Great Serpent lives," said the small creature in a very low voice, looking about
-		him in all directions.</p>
-	<p> "Why is that?" asked Moominmamma.</p>
+  <!-- h2 marks a section heading -->
+  <h2>The Basic Skeleton</h2>
+  <p>Every HTML document follows this structure:</p>
 
-	<p>"Oh, because that’s where the Great Serpent lives," said the small creature in a very low voice, looking about
-		him in all directions.</p>
+  <pre><code>&lt;!DOCTYPE html&gt;          &lt;!-- tells the browser this is HTML5 --&gt;
+&lt;html lang="en"&gt;         &lt;!-- root element; lang sets the language --&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt; &lt;!-- character encoding --&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- visible page content goes here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
 
-	<ul>
-		<li>First element of the list</li>
-		<li>Second element of the list</li>
-	</ul>
-	<p title="Hi, young JavaScript learner!">Hover your cursor over this text!</p>
-	<p class="lead">Параграф с классом lead</p>
-	<p class="mega-paragraph">Параграф с классом mega-paragraph</p>
-	<p class="text-center" title="Этот элемент имеет несколько атрибутов">Параграф с несколькими атрибутами</p>
+  <h2>Headings</h2>
+  <p>
+    HTML has six heading levels. <code>&lt;h1&gt;</code> is the most important (use once per page as the main title).
+    Use them in order — don't jump from <code>&lt;h1&gt;</code> to <code>&lt;h4&gt;</code>.
+  </p>
+
+  <div class="demo-area">
+    <h1>Heading Level 1 — main title</h1>
+    <h2>Heading Level 2 — section</h2>
+    <h3>Heading Level 3 — subsection</h3>
+    <h4>Heading Level 4</h4>
+    <h5>Heading Level 5</h5>
+    <h6>Heading Level 6 — least prominent</h6>
+  </div>
+
+  <h2>Paragraphs</h2>
+  <!-- p wraps a block of text. Browsers add spacing above and below automatically. -->
+  <p>The <code>&lt;p&gt;</code> tag creates a paragraph. Browsers automatically add spacing above and below.</p>
+  <p>Each paragraph starts on a new line, even when adjacent in the source.</p>
+
+  <h2>Lists</h2>
+
+  <!-- ul = unordered list — items are bulleted, order doesn't matter -->
+  <p>Unordered list <code>&lt;ul&gt;</code> — for items without a specific order:</p>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <!-- ol = ordered list — items are numbered, sequence matters -->
+  <p>Ordered list <code>&lt;ol&gt;</code> — for steps or ranked items:</p>
+  <ol>
+    <li>Open a text editor</li>
+    <li>Write your HTML</li>
+    <li>Save the file with a <code>.html</code> extension</li>
+    <li>Open it in a browser</li>
+  </ol>
+
+  <h2>Attributes</h2>
+  <p>
+    Attributes add extra information to an element. They are written inside the opening tag:
+    <code>&lt;tag attribute="value"&gt;</code>
+  </p>
+
+  <table>
+    <tr>
+      <th>Attribute</th>
+      <th>Purpose</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>Unique identifier for one element</td>
+      <td><code>id="main-nav"</code></td>
+    </tr>
+    <tr>
+      <td><code>class</code></td>
+      <td>Groups elements for CSS styling</td>
+      <td><code>class="highlight"</code></td>
+    </tr>
+    <tr>
+      <td><code>title</code></td>
+      <td>Tooltip text shown on hover</td>
+      <td><code>title="More info"</code></td>
+    </tr>
+    <tr>
+      <td><code>lang</code></td>
+      <td>Declares the element's language</td>
+      <td><code>lang="en"</code></td>
+    </tr>
+  </table>
+
+  <!-- title attribute shows a browser tooltip when you hover -->
+  <p title="This tooltip comes from the title attribute!">
+    Hover over this text to see the <code>title</code> attribute in action.
+  </p>
+
+  <!-- An element can have multiple attributes at once -->
+  <p id="note-element" class="note">
+    This paragraph uses <code>id="note-element"</code> and <code>class="note"</code> together.
+    Elements can have as many attributes as needed.
+  </p>
+
 </body>
-
 </html>
